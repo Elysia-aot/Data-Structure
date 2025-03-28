@@ -8,17 +8,17 @@ int search(int *nums,int numsize,int target)//传入数组指针，数组长度�
          int middle=(left+right)/2;
          if (nums[middle]>target)
          {
-            right=middle;
+            right=middle;//因为right娶不到，所以right可以等于middle
          }
          else if (nums[middle]<target)
          {
-            left=middle+1;
+            left=middle+1;//middle已经不在target所在的区间了，所以left不能取middle
          }
          else{
             return middle;
          }
     }
-    return 0;
+    return -1;
 }
 int main() {
     // 测试用例1：目标存在
